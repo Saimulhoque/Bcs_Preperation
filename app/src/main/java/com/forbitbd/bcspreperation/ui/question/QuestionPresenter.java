@@ -38,4 +38,14 @@ public class QuestionPresenter implements QuestionContract.Presenter{
             }
         });
     }
+
+    @Override
+    public void showAd() {
+        mView.showAd();
+    }
+
+    @Override
+    public void startResultActivity() {
+        mView.startResultActivity();
+    }
 }

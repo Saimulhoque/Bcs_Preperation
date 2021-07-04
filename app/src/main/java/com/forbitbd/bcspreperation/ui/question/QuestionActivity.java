@@ -17,10 +17,11 @@ import com.forbitbd.bcspreperation.model.Question;
 import com.forbitbd.bcspreperation.model.SubCategory;
 import com.forbitbd.bcspreperation.ui.quiz.QuizFragment;
 import com.forbitbd.bcspreperation.ui.result.ResultActivity;
-import com.forbitbd.bcspreperation.utils.AdUtil;
 import com.forbitbd.bcspreperation.utils.BaseActivity;
 import com.forbitbd.bcspreperation.utils.Constant;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -45,7 +46,7 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
     private int currentItem;
     private Button btnSubmit;
     public String SubcatId;
-    private InterstitialAd mInterstitialAd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,15 +63,11 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
 
         adapter = new FragAdapter(getSupportFragmentManager());
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-                createAd();
-            }
-        });
 
-        new AdUtil(this);
+        loadBannerAd(R.id.adView);
         initView();
+
+        createAd();
     }
 
     private void initView() {
@@ -110,10 +107,13 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
 
     @Override
     public void onClick(View view) {
-        startResultActivity();
+
+        mPresenter.showAd();
+//        startResultActivity();
     }
 
-    private void startResultActivity() {
+    @Override
+    public void startResultActivity() {
         Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable(Constant.QUESTION_LIST, (Serializable) questionList);
@@ -123,9 +123,7 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
         intent.putExtras(bundle);
         startActivity(intent);
 
-        if (mInterstitialAd != null) {
-            mInterstitialAd.show(this);
-        }
+
 
         finish();
     }
@@ -148,6 +146,7 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
         adapter.notifyDataSetChanged();
     }
 
+
     public void previous() {
         viewPager.setCurrentItem(currentItem - 1, true);
     }
@@ -160,19 +159,9 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
         this.questionList.set(currentItem, question);
     }
 
-    private void createAd() {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        mInterstitialAd = interstitialAd;
-                    }
 
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        mInterstitialAd = null;
-                    }
-                });
+    @Override
+    public void afterAdClose() {
+        startResultActivity();
     }
 }

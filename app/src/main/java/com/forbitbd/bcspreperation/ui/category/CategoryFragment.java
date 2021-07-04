@@ -1,6 +1,5 @@
 package com.forbitbd.bcspreperation.ui.category;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,7 +14,6 @@ import android.view.ViewGroup;
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.Category;
 import com.forbitbd.bcspreperation.ui.subcategory.SubCategoryActivity;
-import com.forbitbd.bcspreperation.utils.AdUtil;
 import com.forbitbd.bcspreperation.utils.Constant;
 
 import java.util.ArrayList;
@@ -36,6 +34,8 @@ public class CategoryFragment extends Fragment implements CategoryContract.View 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = new CategoryPresenter(this);
+
+//        new AdUtil(getActivity());
     }
 
     @Override

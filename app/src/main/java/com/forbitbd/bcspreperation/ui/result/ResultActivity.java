@@ -7,20 +7,17 @@ import android.widget.TextView;
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.Category;
 import com.forbitbd.bcspreperation.model.Question;
-import com.forbitbd.bcspreperation.model.SubCategory;
-import com.forbitbd.bcspreperation.utils.AdUtil;
 import com.forbitbd.bcspreperation.utils.BaseActivity;
 import com.forbitbd.bcspreperation.utils.Constant;
-import com.google.android.gms.ads.AdView;
+
 
 import java.util.List;
 
 public class ResultActivity extends BaseActivity implements ResultContract.View{
 
-    private AdView mAdView;
     private List<Question> questionList;
     private Category category;
-    private SubCategory subCat;
+
     private TextView tvTotal,tvAnswered,tvLeave,tvCorrect;
     private RecyclerView mRecyclerView;
     private QuestionsAdapter adapter;
@@ -42,7 +39,6 @@ public class ResultActivity extends BaseActivity implements ResultContract.View{
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Result");
 
-        new AdUtil(this);
         initView();
     }
 
@@ -79,5 +75,10 @@ public class ResultActivity extends BaseActivity implements ResultContract.View{
     @Override
     public void renderCorrectAnswerTextView(String s) {
         tvCorrect.setText(s);
+    }
+
+    @Override
+    public void afterAdClose() {
+
     }
 }

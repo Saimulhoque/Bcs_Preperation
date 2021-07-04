@@ -12,13 +12,13 @@ import retrofit2.http.Path;
 
 public interface ApiClient {
 
-    @GET("/category")
+    @GET("/bcs/category")
     Call<List<Category>> getAllCategory();
 
-    @GET("/category/{id}/subcats")
+    @GET("/bcs/category/{id}/subcats")
     Call<List<SubCategory>> getAllSubcategory(@Path("id") String id);
 
-    @GET("/subcategory/{id}/questions")
+    @GET("/bcs/subcategory/{id}/questions")
     Call<List<Question>> getAllQuestions(@Path("id") String id);
 
 }

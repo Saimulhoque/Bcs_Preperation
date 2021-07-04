@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/black"
                     android:padding="20dp"
-                    android:text="Cat"
+                    android:text="Question"
                     android:textAppearance="@style/bangla_font"
                     android:textColor="@color/white"
                     android:textSize="20sp"

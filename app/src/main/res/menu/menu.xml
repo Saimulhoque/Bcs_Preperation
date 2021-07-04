@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cnb="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/quiz"
+        android:title="Quiz"
+        android:icon="@drawable/idea"
+        app:cnb_iconColor="@color/purple_500"/>
+
+    <item
+        android:id="@+id/question"
+        android:title="Questions"
+        android:icon="@drawable/question"
+        app:cnb_iconColor="@color/purple_500"/>
+
+    <item
+        android:id="@+id/study"
+        android:title="Study"
+        android:icon="@drawable/book"
+        app:cnb_iconColor="@color/purple_500"/>
+
+    <item
+        android:id="@+id/test"
+        android:title="Model Test"
+        android:icon="@drawable/modeltest"
+        app:cnb_iconColor="@color/purple_500"/>
+
+</menu>

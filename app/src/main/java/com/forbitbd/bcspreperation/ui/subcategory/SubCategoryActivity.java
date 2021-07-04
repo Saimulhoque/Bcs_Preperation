@@ -6,16 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.Category;
 import com.forbitbd.bcspreperation.model.SubCategory;
 import com.forbitbd.bcspreperation.ui.question.QuestionActivity;
-import com.forbitbd.bcspreperation.utils.AdUtil;
 import com.forbitbd.bcspreperation.utils.BaseActivity;
 import com.forbitbd.bcspreperation.utils.Constant;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +46,11 @@ public class SubCategoryActivity extends BaseActivity implements SubCategoryCont
 
         this.subCategoryList = new ArrayList<>();
 
-        new AdUtil(this);
+
         adapter = new SubCategoryAdapter(this,category.getImage());
         recyclerView.setAdapter(adapter);
+
+        loadBannerAd(R.id.adView);
     }
 
     @Override
@@ -69,5 +68,10 @@ public class SubCategoryActivity extends BaseActivity implements SubCategoryCont
         bundle.putSerializable(Constant.SUBCATEGORY,subCategory);
         intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    @Override
+    public void afterAdClose() {
+
     }
 }
