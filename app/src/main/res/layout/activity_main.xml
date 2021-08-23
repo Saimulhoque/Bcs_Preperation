@@ -6,41 +6,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/tbg_color"
     tools:context=".ui.main.MainActivity">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/adView"
-        android:padding="8dp"
-        android:orientation="vertical">
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_margin="5dp"
-            app:contentPadding="@dimen/medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:id="@+id/title"
-                android:textAllCaps="true"
-                android:textStyle="bold"
-                android:padding="8dp"
-                android:text="Bcs Preparation"/>
-
-        </com.google.android.material.card.MaterialCardView>
+        android:layout_height="wrap_content"
+        app:title="@string/app_name"
+        android:background="@color/white"
+        android:elevation="4dp" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/container" />
-
-    </LinearLayout>
+            android:id="@+id/container"
+            android:layout_above="@id/adView"
+            android:layout_below="@id/toolbar"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

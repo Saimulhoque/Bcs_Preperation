@@ -2,10 +2,15 @@ package com.forbitbd.bcspreperation.ui.question;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.ViewPager;
@@ -19,19 +24,18 @@ import com.forbitbd.bcspreperation.ui.quiz.QuizFragment;
 import com.forbitbd.bcspreperation.ui.result.ResultActivity;
 import com.forbitbd.bcspreperation.utils.BaseActivity;
 import com.forbitbd.bcspreperation.utils.Constant;
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimerTask;
+
+import static android.provider.Settings.System.DATE_FORMAT;
 
 public class QuestionActivity extends BaseActivity implements QuestionContract.View, View.OnClickListener {
 
@@ -47,7 +51,6 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
     private Button btnSubmit;
     public String SubcatId;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,12 +65,10 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
         getSupportActionBar().setTitle(subCategory.getName());
 
         adapter = new FragAdapter(getSupportFragmentManager());
-
-
         loadBannerAd(R.id.adView);
         initView();
-
         createAd();
+
     }
 
     private void initView() {
@@ -109,7 +110,7 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
     public void onClick(View view) {
 
         mPresenter.showAd();
-//        startResultActivity();
+
     }
 
     @Override
@@ -122,9 +123,6 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
         bundle.putSerializable(Constant.SUBCATEGORY, subCategory);
         intent.putExtras(bundle);
         startActivity(intent);
-
-
-
         finish();
     }
 

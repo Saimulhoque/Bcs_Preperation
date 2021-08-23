@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/quiz"
-        android:title="Quiz"
-        android:icon="@drawable/idea"
+        android:id="@+id/study"
+        android:title="Study"
+        android:icon="@drawable/book"
         app:cnb_iconColor="@color/purple_500"/>
 
     <item
@@ -15,10 +15,11 @@
         android:icon="@drawable/question"
         app:cnb_iconColor="@color/purple_500"/>
 
+
     <item
-        android:id="@+id/study"
-        android:title="Study"
-        android:icon="@drawable/book"
+        android:id="@+id/quiz"
+        android:title="Quiz"
+        android:icon="@drawable/idea"
         app:cnb_iconColor="@color/purple_500"/>
 
     <item

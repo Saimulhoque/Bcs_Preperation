@@ -47,8 +47,8 @@ public class MainActivity extends BaseActivity implements ChipNavigationBar.OnIt
 
         chipNavigationBar = findViewById(R.id.bottom_navigation);
         chipNavigationBar.setOnItemSelectedListener(this);
-        chipNavigationBar.setItemSelected(R.id.quiz,true);
-        loadFragment(new CategoryFragment());
+        chipNavigationBar.setItemSelected(R.id.study,true);
+        loadFragment(new StudyFragment());
         loadBannerAd(R.id.adView);
     }
 
@@ -67,14 +67,14 @@ public class MainActivity extends BaseActivity implements ChipNavigationBar.OnIt
     public void onItemSelected(int i) {
         Fragment fragment = null;
         switch (i){
-            case R.id.quiz:
-                fragment = new CategoryFragment();
+            case R.id.study:
+                fragment = new StudyFragment();
                 break;
             case R.id.question:
                 fragment = new BcsQuestionFragment();
                 break;
-            case R.id.study:
-                fragment = new StudyFragment();
+            case R.id.quiz:
+                fragment = new CategoryFragment();
                 break;
             case R.id.test:
                 fragment = new ModelTestFragment();

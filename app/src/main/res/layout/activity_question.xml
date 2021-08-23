@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.question.QuestionActivity"
-    android:background="@color/colorPrimary"
     android:orientation="vertical"
     xmlns:ads="http://schemas.android.com/apk/res-auto">
 
@@ -14,17 +13,17 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
         app:titleTextColor="@android:color/black"
-        android:background="@color/colorPrimary" />
+        android:background="@color/tbg_color"
+        android:elevation="4dp"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/indicator"
-        android:visibility="gone"
-        android:padding="@dimen/small">
+        android:visibility="visible"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="36dp"

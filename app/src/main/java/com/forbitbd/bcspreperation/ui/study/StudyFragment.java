@@ -10,9 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.forbitbd.bcspreperation.R;
+import com.forbitbd.bcspreperation.ui.quiz.QuizPresenter;
 
-public class StudyFragment extends Fragment {
+public class StudyFragment extends Fragment implements StudyContract.View {
 
+
+    private StudyPresenter mPresenter;
 
     public StudyFragment() {
         // Required empty public constructor
@@ -21,7 +24,7 @@ public class StudyFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mPresenter = new StudyPresenter(this);
     }
 
     @Override

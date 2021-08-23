@@ -14,6 +14,7 @@
     <color name="colorPrimary">#ffc107</color>
     <color name="colorPrimaryDark">#b28704</color>
     <color name="colorAccent">#333333</color>
+    <color name="tbg_color">#F4F4F4</color>
 
 
     <color name="text_color">#555555</color>
