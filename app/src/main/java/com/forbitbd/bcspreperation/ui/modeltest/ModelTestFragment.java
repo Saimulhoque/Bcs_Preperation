@@ -44,10 +44,10 @@ public class ModelTestFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         modelTestList = new ArrayList<>();
-        modelTestList.add(new ModelTest("মডেল টেষ্ট","৪১ তম বিসিএস স্পেশাল সাজেশন"));
-        modelTestList.add(new ModelTest("মডেল টেষ্ট","৪১ তম বিসিএস এর বাংলা ব্যাকরণ সাজেশন"));
-        modelTestList.add(new ModelTest("মডেল টেষ্ট","৪১ তম বিসিএস বাংলা সাজেশন"));
-        modelTestList.add(new ModelTest("মডেল টেষ্ট","৪১ তম বিসিএস ইংরেজি সাজেশন"));
+        modelTestList.add(new ModelTest("৪১ তম বিসিএস স্পেশাল সাজেশন"));
+        modelTestList.add(new ModelTest("৪১ তম বিসিএস এর বাংলা ব্যাকরণ সাজেশন"));
+        modelTestList.add(new ModelTest("৪১ তম বিসিএস বাংলা সাজেশন"));
+        modelTestList.add(new ModelTest("৪১ তম বিসিএস ইংরেজি সাজেশন"));
 
         adapter = new ModelTestAdapter(modelTestList, new ModelTestClickListener() {
             @Override

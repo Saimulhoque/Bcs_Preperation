@@ -2,19 +2,11 @@ package com.forbitbd.bcspreperation.model;
 
 public class BcsQuestion {
 
-    String cattitle,title;
+    String title;
 
-    public BcsQuestion(String cattitle, String title) {
-        this.cattitle = cattitle;
+    public BcsQuestion(String title) {
+
         this.title = title;
-    }
-
-    public String getCattitle() {
-        return cattitle;
-    }
-
-    public void setCattitle(String cattitle) {
-        this.cattitle = cattitle;
     }
 
     public String getTitle() {

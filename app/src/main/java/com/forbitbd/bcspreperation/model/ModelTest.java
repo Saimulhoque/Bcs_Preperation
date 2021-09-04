@@ -2,19 +2,10 @@ package com.forbitbd.bcspreperation.model;
 
 public class ModelTest {
 
-    String cattitle,title;
+    String title;
 
-    public ModelTest(String cattitle, String title) {
-        this.cattitle = cattitle;
+    public ModelTest(String title) {
         this.title = title;
-    }
-
-    public String getCattitle() {
-        return cattitle;
-    }
-
-    public void setCattitle(String cattitle) {
-        this.cattitle = cattitle;
     }
 
     public String getTitle() {

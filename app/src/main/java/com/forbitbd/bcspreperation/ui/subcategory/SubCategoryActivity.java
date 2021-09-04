@@ -46,7 +46,6 @@ public class SubCategoryActivity extends BaseActivity implements SubCategoryCont
 
         this.subCategoryList = new ArrayList<>();
 
-
         adapter = new SubCategoryAdapter(this,category.getImage());
         recyclerView.setAdapter(adapter);
 

@@ -1,6 +1,8 @@
 package com.forbitbd.bcspreperation.api;
 
 import com.forbitbd.bcspreperation.model.Category;
+import com.forbitbd.bcspreperation.model.QBCategory;
+import com.forbitbd.bcspreperation.model.QBSubcategory;
 import com.forbitbd.bcspreperation.model.Question;
 import com.forbitbd.bcspreperation.model.SubCategory;
 
@@ -12,13 +14,29 @@ import retrofit2.http.Path;
 
 public interface ApiClient {
 
-    @GET("/bcs/category")
+    @GET("/category")
     Call<List<Category>> getAllCategory();
 
-    @GET("/bcs/category/{id}/subcats")
+    @GET("/category/{id}/subcats")
     Call<List<SubCategory>> getAllSubcategory(@Path("id") String id);
 
-    @GET("/bcs/subcategory/{id}/questions")
+    @GET("/subcategory/{id}/questions")
     Call<List<Question>> getAllQuestions(@Path("id") String id);
+
+
+    @GET("/qbcategory")
+    Call<List<QBCategory>> getAllQbCategory();
+
+    @GET("/qbcategory/{id}/subcats")
+    Call<List<QBSubcategory>> getAllQbSubcategory(@Path("id") String id);
+
+//    @GET("/bcs/category")
+//    Call<List<Category>> getAllCategory();
+//
+//    @GET("/bcs/category/{id}/subcats")
+//    Call<List<SubCategory>> getAllSubcategory(@Path("id") String id);
+//
+//    @GET("/bcs/subcategory/{id}/questions")
+//    Call<List<Question>> getAllQuestions(@Path("id") String id);
 
 }

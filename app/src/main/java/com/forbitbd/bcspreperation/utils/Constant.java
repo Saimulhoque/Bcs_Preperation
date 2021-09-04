@@ -7,4 +7,7 @@ public class Constant {
     public static final String QUESTION="QUESTION";
     public static final String QUESTION_LIST="QUESTION_LIST";
 
+    public static final String QBCATEGORY="QBCATEGORY";
+    public static final String QBSUBCATEGORY="QBSUBCATEGORY";
+
 }

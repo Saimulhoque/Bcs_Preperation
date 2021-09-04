@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.ModelTest;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -52,7 +51,7 @@ public class ModelTestAdapter extends RecyclerView.Adapter<ModelTestAdapter.Mode
             super(itemView);
             image =itemView.findViewById(R.id.image);
             text = itemView.findViewById(R.id.title);
-            titlecat = itemView.findViewById(R.id.cat_title);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -63,9 +62,7 @@ public class ModelTestAdapter extends RecyclerView.Adapter<ModelTestAdapter.Mode
         }
 
         public void bind(ModelTest modelTest) {
-            image.setImageResource(R.drawable.logo);
-            text.setText(modelTest.getTitle());
-            titlecat.setText("মডেল টেষ্ট");
+
         }
     }
 }

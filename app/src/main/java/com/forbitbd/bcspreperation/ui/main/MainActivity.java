@@ -1,6 +1,5 @@
 package com.forbitbd.bcspreperation.ui.main;
 
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -10,9 +9,9 @@ import android.os.Bundle;
 
 import com.forbitbd.bcspreperation.InternetFragment;
 import com.forbitbd.bcspreperation.R;
-import com.forbitbd.bcspreperation.ui.bcsquestion.BcsQuestionFragment;
 import com.forbitbd.bcspreperation.ui.category.CategoryFragment;
 import com.forbitbd.bcspreperation.ui.modeltest.ModelTestFragment;
+import com.forbitbd.bcspreperation.ui.questionbank.QuestionBankFragment;
 import com.forbitbd.bcspreperation.ui.study.StudyFragment;
 import com.forbitbd.bcspreperation.utils.BaseActivity;
 
@@ -20,18 +19,12 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MainActivity extends BaseActivity implements ChipNavigationBar.OnItemSelectedListener {
 
-//    //private Toolbar toolbar;
-//    private BottomNavigationView bottomNavigationView;
-
-    ChipNavigationBar chipNavigationBar;
+    private ChipNavigationBar chipNavigationBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        toolbar = findViewById(R.id.toolbar);
-//        toolbar.setTitle(R.string.app_name);
 
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
@@ -71,7 +64,7 @@ public class MainActivity extends BaseActivity implements ChipNavigationBar.OnIt
                 fragment = new StudyFragment();
                 break;
             case R.id.question:
-                fragment = new BcsQuestionFragment();
+                fragment = new QuestionBankFragment();
                 break;
             case R.id.quiz:
                 fragment = new CategoryFragment();
@@ -80,6 +73,5 @@ public class MainActivity extends BaseActivity implements ChipNavigationBar.OnIt
                 fragment = new ModelTestFragment();
         }
         loadFragment(fragment);
-
     }
 }

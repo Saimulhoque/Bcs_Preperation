@@ -1,17 +1,19 @@
 <resources>
     <string name="app_name">Bcs Preparation</string>
-<!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
-<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
+    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
 
 
     <string name="app_id">ca-app-pub-5474497946967422~2393543405</string>
 
-<!--    Test-->
+    <!--    Test-->
     <string name="banner_ad_unit">ca-app-pub-3940256099942544/6300978111</string>
     <string name="inter_ad_unit">ca-app-pub-3940256099942544/1033173712</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-<!--    Original-->
-<!--    <string name="banner_ad_unit">ca-app-pub-5474497946967422/7454298392</string>-->
-<!--    <string name="inter_ad_unit">ca-app-pub-5474497946967422/3388729175</string>-->
+    <!--    Original-->
+    <!--    <string name="banner_ad_unit">ca-app-pub-5474497946967422/7454298392</string>-->
+    <!--    <string name="inter_ad_unit">ca-app-pub-5474497946967422/3388729175</string>-->
 
 </resources>

@@ -82,7 +82,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
                 ivQuestion.setImageResource(R.drawable.tick);
             }else{
                 ivQuestion.setImageResource(R.drawable.wrong);
-                //tvQuestion.setCompoundDrawablesWithIntrinsicBounds(context.getDrawable(R.drawable.wrong),null,null,null);
+//                tvQuestion.setCompoundDrawablesWithIntrinsicBounds(context.getDrawable(R.drawable.wrong),null,null,null);
             }
 
             if(question.getOptions().length==2){
@@ -105,6 +105,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
                 lThree.setVisibility(View.VISIBLE);
                 lFour.setVisibility(View.GONE);
                 lFive.setVisibility(View.GONE);
+
             }else if(question.getOptions().length==4){
                 rOne.setText(question.getOptions()[0]);
                 rTwo.setText(question.getOptions()[1]);
@@ -116,13 +117,13 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
                 lThree.setVisibility(View.VISIBLE);
                 lFour.setVisibility(View.VISIBLE);
                 lFive.setVisibility(View.GONE);
+
             }else if(question.getOptions().length==5) {
                 rOne.setText(question.getOptions()[0]);
                 rTwo.setText(question.getOptions()[1]);
                 rThree.setText(question.getOptions()[2]);
                 rFour.setText(question.getOptions()[3]);
                 rFive.setText(question.getOptions()[4]);
-
 
                 lOne.setVisibility(View.VISIBLE);
                 lTwo.setVisibility(View.VISIBLE);

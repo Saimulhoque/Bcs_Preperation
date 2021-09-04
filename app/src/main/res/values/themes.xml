@@ -20,9 +20,15 @@
         <item name="android:fontFamily">@font/sl</item>
     </style>
 
+    <style name="tabtextfont" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/sl</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="bottom_navigation">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
     </style>
+
 </resources>
