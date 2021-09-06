@@ -12,19 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.Category;
-import com.forbitbd.bcspreperation.model.QBCategory;
+import com.forbitbd.bcspreperation.model.PreviousQuestionType;
 
 import java.util.List;
 
 public class QuestionBankAdapter extends RecyclerView.Adapter<QuestionBankAdapter.QuestionBankHolder> {
 
     private Context context;
-    private List<QBCategory> qbCategoryList;
+    private List<PreviousQuestionType> previousQuestionTypeList;
     private QuestionBankClickListener listener;
 
-    public QuestionBankAdapter(Context context, List<QBCategory> qbCategoryList, QuestionBankClickListener listener) {
+    public QuestionBankAdapter(Context context, List<PreviousQuestionType> previousQuestionTypeList, QuestionBankClickListener listener) {
         this.context = context;
-        this.qbCategoryList = qbCategoryList;
+        this.previousQuestionTypeList = previousQuestionTypeList;
         this.listener = listener;
     }
 
@@ -37,18 +37,18 @@ public class QuestionBankAdapter extends RecyclerView.Adapter<QuestionBankAdapte
 
     @Override
     public void onBindViewHolder(@NonNull QuestionBankHolder holder, int position) {
-        QBCategory qbCategory = qbCategoryList.get(position);
-        holder.bind(qbCategory);
+        PreviousQuestionType previousQuestionType = previousQuestionTypeList.get(position);
+        holder.bind(previousQuestionType);
     }
 
     @Override
     public int getItemCount() {
-        return qbCategoryList.size();
+        return previousQuestionTypeList.size();
     }
 
-    public void AddCategory(QBCategory qbCategory) {
-        qbCategoryList.add(qbCategory);
-        int position = qbCategoryList.indexOf(qbCategory);
+    public void AddCategory(PreviousQuestionType previousQuestionType) {
+        previousQuestionTypeList.add(previousQuestionType);
+        int position = previousQuestionTypeList.indexOf(previousQuestionType);
         notifyItemInserted(position);
     }
 
@@ -64,15 +64,15 @@ public class QuestionBankAdapter extends RecyclerView.Adapter<QuestionBankAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.OnItemClick(qbCategoryList.get(getAdapterPosition()));
+                    listener.OnItemClick(previousQuestionTypeList.get(getAdapterPosition()));
                 }
             });
 
         }
 
-        public void bind(QBCategory qbCategory) {
+        public void bind(PreviousQuestionType previousQuestionType) {
             img.setImageResource(R.drawable.logo);
-            name.setText(qbCategory.getName());
+            name.setText(previousQuestionType.getBangla_name());
         }
     }
 }

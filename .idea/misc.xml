@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/BcsPreperation/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/BcsPreperation/app/src/main/res/layout/activity_previous_question_order.xml" value="0.1381340579710145" />
+        <entry key="..\:/BcsPreperation/app/src/main/res/layout/fragment_previous_question_order.xml" value="0.18206521739130435" />
+        <entry key="..\:/BcsPreperation/app/src/main/res/layout/item_modeltext.xml" value="0.1" />
         <entry key="..\:/Forbit/BcsPreperation/app/src/main/res/layout/activity_main.xml" value="0.15" />
         <entry key="..\:/Forbit/BcsPreperation/app/src/main/res/layout/activity_qbquestion.xml" value="0.1766304347826087" />
         <entry key="..\:/Forbit/BcsPreperation/app/src/main/res/layout/activity_qbsubcat.xml" value="0.1721014492753623" />

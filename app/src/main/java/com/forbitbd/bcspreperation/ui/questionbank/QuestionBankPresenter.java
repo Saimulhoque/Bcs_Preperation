@@ -2,7 +2,8 @@ package com.forbitbd.bcspreperation.ui.questionbank;
 
 import com.forbitbd.bcspreperation.api.ApiClient;
 import com.forbitbd.bcspreperation.api.ServiceGenerator;
-import com.forbitbd.bcspreperation.model.QBCategory;
+import com.forbitbd.bcspreperation.model.PreviousQuestionType;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,16 +20,16 @@ public class QuestionBankPresenter implements QuestionBankContract.Presenter{
     @Override
     public void getCategories() {
         ApiClient apiClient = ServiceGenerator.createService(ApiClient.class);
-        apiClient.getAllQbCategory().enqueue(new Callback<List<QBCategory>>() {
+        apiClient.getPreviousQuestionsTypes().enqueue(new Callback<List<PreviousQuestionType>>() {
             @Override
-            public void onResponse(Call<List<QBCategory>> call, Response<List<QBCategory>> response) {
+            public void onResponse(Call<List<PreviousQuestionType>> call, Response<List<PreviousQuestionType>> response) {
                 if (response.isSuccessful()){
                     mView.renderCategory(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<List<QBCategory>> call, Throwable t) {
+            public void onFailure(Call<List<PreviousQuestionType>> call, Throwable t) {
 
             }
         });

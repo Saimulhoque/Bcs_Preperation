@@ -15,11 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BcsPreperation">
         <activity
-            android:name=".ui.qbquestion.QBQuestionActivity"
+            android:name=".ui.pquestionorder.PreviousQuestionOrderActivity"
             android:exported="true" />
-        <activity
-            android:name=".ui.qbsubcat.QBSubcatActivity"
-            android:exported="true" />
+        <activity android:name=".ui.qbquestion.QBQuestionActivity" />
+        <activity android:name=".ui.qbsubcat.QBSubcatActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

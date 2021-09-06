@@ -1,6 +1,5 @@
 package com.forbitbd.bcspreperation.ui.questionbank;
 
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,9 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.forbitbd.bcspreperation.R;
-import com.forbitbd.bcspreperation.model.QBCategory;
-import com.forbitbd.bcspreperation.ui.qbsubcat.QBSubcatActivity;
-import com.forbitbd.bcspreperation.ui.subcategory.SubCategoryActivity;
+import com.forbitbd.bcspreperation.model.PreviousQuestionType;
+import com.forbitbd.bcspreperation.ui.pquestionorder.PreviousQuestionOrderFragment;
 import com.forbitbd.bcspreperation.utils.Constant;
 
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ public class QuestionBankFragment extends Fragment implements QuestionBankContra
 
     private QuestionBankPresenter mPresenter;
     private RecyclerView recyclerView;
-    private ArrayList<QBCategory> qbCategoryList;
+    private ArrayList<PreviousQuestionType> qbCategoryList;
     private QuestionBankAdapter adapter;
 
     public QuestionBankFragment() {
@@ -47,27 +45,30 @@ public class QuestionBankFragment extends Fragment implements QuestionBankContra
 
     private void initView(View view) {
         recyclerView = view.findViewById(R.id.recyclerview);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         this.qbCategoryList = new ArrayList<>();
 
         adapter = new QuestionBankAdapter(getContext(), qbCategoryList, new QuestionBankClickListener() {
             @Override
-            public void OnItemClick(QBCategory qbCategory) {
-                Intent intent = new Intent(getContext(), QBSubcatActivity.class);
+            public void OnItemClick(PreviousQuestionType previousQuestionType) {
+
+                PreviousQuestionOrderFragment previousQuestionOrderFragment = new PreviousQuestionOrderFragment();
                 Bundle bundle = new Bundle();
-                bundle.putSerializable(Constant.QBCATEGORY, qbCategory);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                bundle.putSerializable(Constant.QBCATEGORY, previousQuestionType);
+                previousQuestionOrderFragment.setArguments(bundle);
+
+                getParentFragmentManager().beginTransaction()
+                        .replace(R.id.container,previousQuestionOrderFragment).addToBackStack("dfdf").commit();
             }
         });
         recyclerView.setAdapter(adapter);
     }
 
     @Override
-    public void renderCategory(List<QBCategory> qbCategoryList) {
-        for (QBCategory x : qbCategoryList ){
+    public void renderCategory(List<PreviousQuestionType> questionTypeList) {
+        for (PreviousQuestionType x : questionTypeList) {
             adapter.AddCategory(x);
-    }
+        }
     }
 }
