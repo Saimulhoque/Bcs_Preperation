@@ -61,8 +61,6 @@
     <style name="style_result_options">
         <item name="android:layout_marginStart">@dimen/medium</item>
         <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">@dimen/small</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textAppearance">@style/bangla_font</item>
@@ -77,10 +75,7 @@
         <item name="android:drawablePadding">@dimen/usual</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
         <item name="android:textAppearance">@style/bangla_font</item>
     </style>
-
-
 
 </resources>

@@ -1,6 +1,8 @@
 package com.forbitbd.bcspreperation.model;
 
-public class Order {
+import java.io.Serializable;
+
+public class Order implements Serializable {
 
     private String name;
     private String bangla_name;

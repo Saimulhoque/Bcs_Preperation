@@ -27,7 +27,7 @@ public class PreviousQuestionOrderPresenter implements PreviousQuestionOrderCont
             @Override
             public void onResponse(Call<List<Order>> call, Response<List<Order>> response) {
                 if (response.isSuccessful()){
-                    Log.d("JJJJJ", "onResponse: "+response.body().size());
+                    Log.d("JJJJJ", "onResponse: "+order.getType());
                     mView.renderOrders(response.body());
                 }
             }

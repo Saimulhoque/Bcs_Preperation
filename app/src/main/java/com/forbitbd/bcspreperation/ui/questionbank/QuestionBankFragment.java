@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.PreviousQuestionType;
+import com.forbitbd.bcspreperation.ui.main.Communicator;
 import com.forbitbd.bcspreperation.ui.pquestionorder.PreviousQuestionOrderFragment;
 import com.forbitbd.bcspreperation.utils.Constant;
 
@@ -21,6 +22,7 @@ public class QuestionBankFragment extends Fragment implements QuestionBankContra
     private RecyclerView recyclerView;
     private ArrayList<PreviousQuestionType> qbCategoryList;
     private QuestionBankAdapter adapter;
+    private Communicator communicator;
 
     public QuestionBankFragment() {
         // Required empty public constructor
@@ -30,6 +32,7 @@ public class QuestionBankFragment extends Fragment implements QuestionBankContra
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = new QuestionBankPresenter(this);
+        communicator = (Communicator) getActivity();
     }
 
     @Override
@@ -58,8 +61,7 @@ public class QuestionBankFragment extends Fragment implements QuestionBankContra
                 bundle.putSerializable(Constant.QBCATEGORY, previousQuestionType);
                 previousQuestionOrderFragment.setArguments(bundle);
 
-                getParentFragmentManager().beginTransaction()
-                        .replace(R.id.container,previousQuestionOrderFragment).addToBackStack("dfdf").commit();
+                communicator.loadFragment(previousQuestionOrderFragment);
             }
         });
         recyclerView.setAdapter(adapter);

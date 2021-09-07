@@ -1,8 +1,5 @@
 package com.forbitbd.bcspreperation.ui.question;
 
-
-import android.util.Log;
-
 import com.forbitbd.bcspreperation.api.ApiClient;
 import com.forbitbd.bcspreperation.api.ServiceGenerator;
 import com.forbitbd.bcspreperation.model.Question;

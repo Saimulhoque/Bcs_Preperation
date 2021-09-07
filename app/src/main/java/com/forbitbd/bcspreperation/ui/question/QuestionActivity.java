@@ -108,9 +108,7 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
 
     @Override
     public void onClick(View view) {
-
         mPresenter.showAd();
-
     }
 
     @Override
@@ -144,7 +142,6 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
         adapter.notifyDataSetChanged();
     }
 
-
     public void previous() {
         viewPager.setCurrentItem(currentItem - 1, true);
     }
@@ -157,9 +154,9 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
         this.questionList.set(currentItem, question);
     }
 
-
     @Override
     public void afterAdClose() {
         startResultActivity();
+        createAd();
     }
 }

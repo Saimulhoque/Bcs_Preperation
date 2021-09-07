@@ -69,6 +69,7 @@ public class SubCategoryActivity extends BaseActivity implements SubCategoryCont
         startActivity(intent);
     }
 
+
     @Override
     public void afterAdClose() {
 

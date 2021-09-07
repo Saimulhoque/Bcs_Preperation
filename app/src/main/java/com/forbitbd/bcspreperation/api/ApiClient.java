@@ -2,6 +2,7 @@ package com.forbitbd.bcspreperation.api;
 
 import com.forbitbd.bcspreperation.model.Category;
 import com.forbitbd.bcspreperation.model.Order;
+import com.forbitbd.bcspreperation.model.PreviousQuestion;
 import com.forbitbd.bcspreperation.model.PreviousQuestionType;
 import com.forbitbd.bcspreperation.model.QBSubcategory;
 import com.forbitbd.bcspreperation.model.Question;
@@ -49,8 +50,8 @@ public interface ApiClient {
     @POST("/bcs/questions-bank/orders")
     Call<List<Order>> getAllOrders(@Body Order order);
 
-//    @POST("/bcs/questions-bank/orders")
-//    Call<List<Order>> getAllOrders(@Body Order order);
+    @POST("/bcs/questions-bank/questions")
+    Call<List<PreviousQuestion>> getAllPreviousQuestions(@Body PreviousQuestion previousQuestion);
 
     @GET("/bcs/qbcategory/{id}/subcats")
     Call<List<QBSubcategory>> getAllQbSubcategory(@Path("id") String id);

@@ -18,7 +18,6 @@ public class SubCategoryPresenter implements SubCategoryContract.Presenter{
         this.mView = mView;
     }
 
-
     @Override
     public void getSubcategory(String CatId) {
         ApiClient client = ServiceGenerator.createService(ApiClient.class);

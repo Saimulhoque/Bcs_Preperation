@@ -1,5 +1,6 @@
 package com.forbitbd.bcspreperation.ui.pquestionorder;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,16 +14,18 @@ import android.view.ViewGroup;
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.Order;
 import com.forbitbd.bcspreperation.model.PreviousQuestionType;
+import com.forbitbd.bcspreperation.ui.main.Communicator;
+import com.forbitbd.bcspreperation.ui.previousquestion.PreviousQuestionActivity;
 import com.forbitbd.bcspreperation.utils.Constant;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class PreviousQuestionOrderFragment extends Fragment implements PreviousQuestionOrderContract.View{
+public class PreviousQuestionOrderFragment extends Fragment implements PreviousQuestionOrderContract.View {
 
     private PreviousQuestionOrderPresenter mPresenter;
     private PreviousQuestionOrderAdapter adapter;
     private PreviousQuestionType previousQuestionType;
+    private Communicator communicator;
 
     public PreviousQuestionOrderFragment() {
         // Required empty public constructor
@@ -31,6 +34,8 @@ public class PreviousQuestionOrderFragment extends Fragment implements PreviousQ
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        communicator = (Communicator) getActivity();
 
         mPresenter = new PreviousQuestionOrderPresenter(this);
         previousQuestionType = (PreviousQuestionType) getArguments().getSerializable(Constant.QBCATEGORY);
@@ -48,12 +53,17 @@ public class PreviousQuestionOrderFragment extends Fragment implements PreviousQ
     }
 
     private void initView(View view) {
-
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new PreviousQuestionOrderAdapter();
+        adapter = new PreviousQuestionOrderAdapter(new PreviousQuestionClickListener() {
+            @Override
+            public void onItemClick(Order order) {
+                communicator.showAd();
+                startQuestionActivity(order);
+            }
+        });
         recyclerView.setAdapter(adapter);
 
         Order order = new Order();
@@ -62,10 +72,19 @@ public class PreviousQuestionOrderFragment extends Fragment implements PreviousQ
         mPresenter.getAllOrders(order);
     }
 
+    private void startQuestionActivity(Order order) {
+        Intent intent = new Intent(getContext(), PreviousQuestionActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(Constant.ORDER, order);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
     @Override
     public void renderOrders(List<Order> orders) {
         for (Order x : orders) {
             adapter.AddOrders(x);
         }
     }
+
 }

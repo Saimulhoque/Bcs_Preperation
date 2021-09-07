@@ -18,8 +18,10 @@ import java.util.List;
 public class PreviousQuestionOrderAdapter extends RecyclerView.Adapter<PreviousQuestionOrderAdapter.OrderHolder> {
 
     private List<Order> orderList;
+    private PreviousQuestionClickListener listener;
 
-    public PreviousQuestionOrderAdapter() {
+    public PreviousQuestionOrderAdapter(PreviousQuestionClickListener listener) {
+        this.listener = listener;
         this.orderList = new ArrayList<>();
     }
 
@@ -57,6 +59,13 @@ public class PreviousQuestionOrderAdapter extends RecyclerView.Adapter<PreviousQ
 
             image = itemView.findViewById(R.id.image);
             text = itemView.findViewById(R.id.title);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClick(orderList.get(getAdapterPosition()));
+                }
+            });
         }
 
         public void bind(Order order) {

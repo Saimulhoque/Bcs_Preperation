@@ -39,22 +39,22 @@ public class ModelTestFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_model_test, container, false);
 
-        recyclerView = view.findViewById(R.id.recyclerview);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        modelTestList = new ArrayList<>();
-        modelTestList.add(new ModelTest("৪১ তম বিসিএস স্পেশাল সাজেশন"));
-        modelTestList.add(new ModelTest("৪১ তম বিসিএস এর বাংলা ব্যাকরণ সাজেশন"));
-        modelTestList.add(new ModelTest("৪১ তম বিসিএস বাংলা সাজেশন"));
-        modelTestList.add(new ModelTest("৪১ তম বিসিএস ইংরেজি সাজেশন"));
-
-        adapter = new ModelTestAdapter(modelTestList, new ModelTestClickListener() {
-            @Override
-            public void OnItemClick(ModelTest modelTest) {
-            }
-        });
-        recyclerView.setAdapter(adapter);
+//        recyclerView = view.findViewById(R.id.recyclerview);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//
+//        modelTestList = new ArrayList<>();
+//        modelTestList.add(new ModelTest("৪১ তম বিসিএস স্পেশাল সাজেশন"));
+//        modelTestList.add(new ModelTest("৪১ তম বিসিএস এর বাংলা ব্যাকরণ সাজেশন"));
+//        modelTestList.add(new ModelTest("৪১ তম বিসিএস বাংলা সাজেশন"));
+//        modelTestList.add(new ModelTest("৪১ তম বিসিএস ইংরেজি সাজেশন"));
+//
+//        adapter = new ModelTestAdapter(modelTestList, new ModelTestClickListener() {
+//            @Override
+//            public void OnItemClick(ModelTest modelTest) {
+//            }
+//        });
+//        recyclerView.setAdapter(adapter);
 
         return view;
     }

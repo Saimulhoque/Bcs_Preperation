@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp"
-    android:layout_marginBottom="4dp">
+    android:layout_margin="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/black"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:text="Question"
                 android:textAppearance="@style/bangla_font"
                 android:textColor="@color/white"
@@ -37,15 +37,18 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/layout_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:visibility="visible">
 
                     <TextView
                         style="@style/qbquestiontextstyle"
                         android:layout_marginRight="5dp"
-                        android:text="1."
+                        android:text="ক."
+                        android:textAppearance="@style/bangla_font"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
@@ -54,20 +57,24 @@
                         style="@style/qbquestiontextstyle"
                         android:layout_width="match_parent"
                         android:text=""
+                        android:textAppearance="@style/bangla_font"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:visibility="visible">
 
                     <TextView
                         style="@style/qbquestiontextstyle"
                         android:layout_marginRight="5dp"
-                        android:text="2."
+                        android:text="খ."
+                        android:textAppearance="@style/bangla_font"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
@@ -76,20 +83,24 @@
                         style="@style/qbquestiontextstyle"
                         android:layout_width="match_parent"
                         android:text=""
+                        android:textAppearance="@style/bangla_font"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_three"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:visibility="visible">
 
                     <TextView
                         style="@style/qbquestiontextstyle"
                         android:layout_marginRight="5dp"
-                        android:text="3."
+                        android:text="গ."
+                        android:textAppearance="@style/bangla_font"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
@@ -98,20 +109,24 @@
                         style="@style/qbquestiontextstyle"
                         android:layout_width="match_parent"
                         android:text=""
+                        android:textAppearance="@style/bangla_font"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_four"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:visibility="visible">
 
                     <TextView
                         style="@style/qbquestiontextstyle"
                         android:layout_marginRight="5dp"
-                        android:text="4."
+                        android:text="ঘ."
+                        android:textAppearance="@style/bangla_font"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
@@ -120,28 +135,32 @@
                         style="@style/qbquestiontextstyle"
                         android:layout_width="match_parent"
                         android:text=""
+                        android:textAppearance="@style/bangla_font"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_five"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:visibility="gone">
 
                     <TextView
                         style="@style/qbquestiontextstyle"
                         android:layout_marginRight="5dp"
-                        android:text="5."
+                        android:text="ঙ."
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" android:textAppearance="@style/bangla_font"/>
 
                     <TextView
                         android:id="@+id/opt_five"
                         style="@style/qbquestiontextstyle"
                         android:layout_width="match_parent"
                         android:text=""
+                        android:textAppearance="@style/bangla_font"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -161,7 +180,8 @@
                     <TextView
                         style="@style/qbquestiontextstyle"
                         android:layout_marginRight="5dp"
-                        android:text="Answer:"
+                        android:text="উত্তর:"
+                        android:textAppearance="@style/bangla_font"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
@@ -170,6 +190,7 @@
                         style="@style/qbquestiontextstyle"
                         android:layout_width="match_parent"
                         android:text=""
+                        android:textAppearance="@style/bangla_font"
                         android:textStyle="bold" />
 
                 </LinearLayout>
