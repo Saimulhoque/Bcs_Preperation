@@ -79,6 +79,6 @@ public class ResultActivity extends BaseActivity implements ResultContract.View{
 
     @Override
     public void afterAdClose() {
-
+        createAd();
     }
 }

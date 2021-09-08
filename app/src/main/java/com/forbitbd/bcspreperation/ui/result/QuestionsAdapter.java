@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.forbitbd.bcspreperation.R;
 import com.forbitbd.bcspreperation.model.Question;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.QuestionsHolder> {
@@ -27,7 +28,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
 
     @Override
     public QuestionsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_question,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_question,parent,false);
         return new QuestionsHolder(view);
     }
 

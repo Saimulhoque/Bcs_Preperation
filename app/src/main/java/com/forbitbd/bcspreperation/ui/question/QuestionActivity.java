@@ -157,6 +157,5 @@ public class QuestionActivity extends BaseActivity implements QuestionContract.V
     @Override
     public void afterAdClose() {
         startResultActivity();
-        createAd();
     }
 }

@@ -3,11 +3,17 @@ package com.forbitbd.bcspreperation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.forbitbd.bcspreperation.ui.main.MainActivity;
 
@@ -15,22 +21,30 @@ public class SplashActivity extends AppCompatActivity {
 
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 1000;
+    int delay = 3000;
     private Animation slideup;
-    private ImageView image;
+    private LinearLayout linearLayout;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.WHITE);
+        }
         setContentView(R.layout.activity_splash);
 
-        image = findViewById(R.id.logo);
+        linearLayout = findViewById(R.id.layout);
+        textView = findViewById(R.id.slogan);
         slideup = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
     }
 
     @Override
     protected void onStart() {
-        image.startAnimation(slideup);
+        linearLayout.startAnimation(slideup);
+        textView.startAnimation(slideup);
         super.onStart();
     }
 
